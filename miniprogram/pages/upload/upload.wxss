@@ -1,0 +1,17 @@
+page{
+  padding: 32px;
+}
+
+.title{
+  font-size: 23px;
+  font-weight: 700;
+}
+
+.content{
+  color: rgba(0, 0, 0, 0.5);
+  margin-top: 16px;
+}
+
+.button{
+  margin-top: 16px;
+}

@@ -1,0 +1,5 @@
+<van-cell-group>
+  <van-cell title="大学生心理测评表" url="/pages/upload/upload" is-link  />
+  <van-cell title="第4团训" label="学号尾数20-29的同学上交" border="{{ false }}" />
+</van-cell-group>
+<van-button type="primary" size="large" bind:click="toAdd">添加收集</van-button>

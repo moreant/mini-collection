@@ -1,0 +1,16 @@
+<van-cell-group>
+  <van-field
+    label="标题"
+    placeholder="请输入标题"
+    bind:change="onChange"
+    data-name="title"
+  ></van-field>
+  <van-field
+    label="描述"
+    placeholder="请输入描述"
+    border="{{ false }}"
+    bind:change="onChange"
+    data-name="content"
+  ></van-field>
+</van-cell-group>
+<van-button type="primary" size="large" bind:click="submit">提交收集</van-button>
