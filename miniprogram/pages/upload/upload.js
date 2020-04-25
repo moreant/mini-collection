@@ -1,17 +1,26 @@
 // pages/upload/upload.js
+
+const db = wx.cloud.database()
+const collections = db.collection('collections')
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    loading: true
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    const { id } = options
+    console.log(id);
+    collections.doc(id).get().then(res => {
+      this.setData({ collection: res.data, loading: false })
+    })
 
   },
 

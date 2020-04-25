@@ -68,6 +68,14 @@
 					"id": -1,
 					"name": "pages/upload/upload",
 					"pathName": "pages/upload/upload",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "pages/upload/upload?id",
+					"pathName": "pages/upload/upload",
+					"query": "id=b7ef76b45ea40bac002c65264c207d7d",
 					"scene": null
 				}
 			]

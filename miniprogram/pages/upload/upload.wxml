@@ -1,9 +1,11 @@
-<view class="title">title</view>
-<view class="content">content</view>
+<van-transition show="{{ !loading }}">
+  <view class="title">{{ collection.title }}</view>
+  <view class="content">{{ collection.content }}</view>
 
-<view class="button">
-  <van-button type="primary">上传</van-button>
-  <van-button type="info">下载</van-button>
-</view>
+  <view class="button">
+    <van-button type="primary">上传</van-button>
+    <van-button type="info">下载</van-button>
+  </view>
+</van-transition>
 <!-- <van-button type="warning">警告按钮</van-button>
 <van-button type="danger">危险按钮</van-button> -->

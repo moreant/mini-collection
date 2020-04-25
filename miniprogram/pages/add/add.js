@@ -1,4 +1,8 @@
 // pages/add/add.js
+
+const db = wx.cloud.database()
+const collections = db.collection('collections')
+
 Page({
 
   /**
@@ -16,14 +20,29 @@ Page({
     const input = e.detail
     console.log(e);
     this.setData({ [e.target.dataset.name]: input })
+    wx.ciac
   },
 
   /**
    * 表单提交（提交到云数据库）
    */
-  submit(e) {  
+  submit(e) {
     const { title, content } = this.data
     console.log({ title, content });
+    collections.add({
+      data: {
+        title, content
+      }
+    }).then(() => {
+      wx.showToast({
+        title: '添加成功',
+      })
+      setTimeout(
+        () => {
+          wx.navigateBack()
+        }, 1000
+      )
+    })
   },
 
   /**

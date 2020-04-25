@@ -1,17 +1,21 @@
 // pages/index/index.js
+
+const db = wx.cloud.database()
+const collections = db.collection('collections')
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    loading: true
   },
 
   /**
    * 导航到 add 页面
    */
-  toAdd(){
+  toAdd() {
     wx.navigateTo({
       url: '/pages/add/add',
     })
@@ -21,7 +25,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    collections.get().then(res => {
+      this.setData({
+        collectionList: res.data,
+        loading: false
+      })
+    })
   },
 
   /**
