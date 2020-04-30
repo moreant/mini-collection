@@ -19,7 +19,9 @@ Page({
   onChange(e) {
     const input = e.detail
     console.log(e);
-    this.setData({ [e.target.dataset.name]: input })
+    this.setData({
+      [e.target.dataset.name]: input
+    })
     wx.ciac
   },
 
@@ -27,11 +29,18 @@ Page({
    * 表单提交（提交到云数据库）
    */
   submit(e) {
-    const { title, content } = this.data
-    console.log({ title, content });
+    const {
+      title,
+      content
+    } = this.data
+    console.log({
+      title,
+      content
+    });
     collections.add({
       data: {
-        title, content
+        title,
+        content
       }
     }).then(() => {
       wx.showToast({
@@ -49,7 +58,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
   },
 
   /**

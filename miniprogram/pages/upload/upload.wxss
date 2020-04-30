@@ -12,6 +12,11 @@ page{
   margin-top: 16px;
 }
 
+.content:empty::before{
+  content: '暂无描述';
+  display: block;
+}
+
 .button{
   margin-top: 16px;
 }

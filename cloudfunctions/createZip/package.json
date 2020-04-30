@@ -1,0 +1,15 @@
+{
+  "name": "createZip",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jszip": "^3.4.0",
+    "wx-server-sdk": "~1.8.3"
+  }
+}

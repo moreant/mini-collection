@@ -2,6 +2,8 @@
 
 const db = wx.cloud.database()
 const collections = db.collection('collections')
+const _ = db.command
+
 
 Page({
 
@@ -11,6 +13,52 @@ Page({
   data: {
     loading: true
   },
+
+  upload() {
+    wx.chooseMessageFile({
+      count: 1,
+      type:'file',
+      success: res => {
+        // tempFilePath可以作为img标签的src属性显示图片
+        const tempFilePaths = res.tempFiles
+        console.log(tempFilePaths[0]);
+        const id = this.data.collection._id
+        wx.showLoading({ title: '文件上传中', })
+        wx.cloud.uploadFile({
+          cloudPath: id + '/upload/' + tempFilePaths[0].name,
+          filePath: tempFilePaths[0].path, // 文件路径
+        }).then(res => {
+          collections.doc(id).update({
+            data: {
+              files: _.push({
+                name: tempFilePaths[0].name,
+                fileID: res.fileID
+              })
+            }
+          }).then(() => {
+            wx.showToast({ title: '上传成功', })
+          })
+        }).catch(error => {
+          // handle error
+        })
+      }
+    })
+  },
+
+
+  donwload() {
+    const { files, _id } = this.data.collection
+    wx.cloud.callFunction({
+      name: 'createZip',
+      data: {
+        files,
+        _id
+      }
+    }).then(res => {
+      console.log(res);
+    })
+  },
+
 
   /**
    * 生命周期函数--监听页面加载

@@ -25,7 +25,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    collections.get().then(res => {
+    collections.where({
+      _openid: '{openid}'
+    }).get().then(res => {
       this.setData({
         collectionList: res.data,
         loading: false

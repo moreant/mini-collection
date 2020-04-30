@@ -10,6 +10,7 @@
 		"minified": true,
 		"newFeature": true,
 		"coverView": true,
+		"nodeModules": true,
 		"autoAudits": false,
 		"showShadowRootInWxmlPanel": true,
 		"scopeDataCheck": false,
@@ -17,17 +18,25 @@
 		"checkSiteMap": true,
 		"uploadWithSourceMap": true,
 		"babelSetting": {
-			"ignore": [],
+			"ignore": [
+				"miniprogram_npm/*"
+			],
 			"disablePlugins": [],
 			"outputPath": ""
 		},
-		"nodeModules": true
+		"useCompilerModule": true,
+		"userConfirmedUseCompilerModuleSwitch": true
 	},
 	"appid": "wx03bcb7ad8c3a3ac9",
 	"projectname": "mini-collection",
-	"libVersion": "2.8.1",
+	"libVersion": "2.10.4",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
+	"watchOptions": {
+		"ignore": [
+			"miniprogram_npm/**"
+		]
+	},
 	"condition": {
 		"search": {
 			"current": -1,

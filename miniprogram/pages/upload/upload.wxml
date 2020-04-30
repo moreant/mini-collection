@@ -3,8 +3,8 @@
   <view class="content">{{ collection.content }}</view>
 
   <view class="button">
-    <van-button type="primary">上传</van-button>
-    <van-button type="info">下载</van-button>
+    <van-button type="primary" bind:tap="upload">上传</van-button>
+    <van-button type="info" bind:tap="donwload">下载</van-button>
   </view>
 </van-transition>
 <!-- <van-button type="warning">警告按钮</van-button>
